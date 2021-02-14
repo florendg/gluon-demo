@@ -20,9 +20,6 @@ public class AppViewManager {
     }
 
     public static void registerDrawer(MobileApplication app) {
-        NavigationDrawer.Header header = new NavigationDrawer.Header("Gluon Mobile",
-                "The Demo App",
-                new Avatar(21,new Image(AppViewManager.class.getResourceAsStream("openduke.png"))));
-        Utils.buildDrawer(app.getDrawer(),header,REGISTRY.getViews());
+
     }
 }
