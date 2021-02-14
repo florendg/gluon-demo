@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import com.gluonhq.charm.glisten.mvc.View?>
+
+<?import javafx.scene.control.Button?>
+<View fx:id="demo" prefHeight="800" prefWidth="400" fx:controller="dev.vultureweb.sample.DemoController"
+                                             xmlns="http://javafx.com/javafx/15"
+                                             xmlns:fx="http://javafx/fxml/1">
+    <centerr>
+        <Button fx:id="button" onAction="#onClick" text="Click me!"/>
+    </centerr>
+</View>
