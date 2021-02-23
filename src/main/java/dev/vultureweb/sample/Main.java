@@ -1,15 +1,16 @@
 package dev.vultureweb.sample;
 
-import com.gluonhq.attach.util.Constants;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.visual.Swatch;
+import dev.vultureweb.sample.views.AppViewManager;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
 public class Main extends MobileApplication {
 
     @Override
     public void init() {
-        System.setProperty(Constants.ATTACH_DEBUG,"true");
         AppViewManager.registerViews(this);
     }
 
@@ -17,6 +18,8 @@ public class Main extends MobileApplication {
     public void postInit(Scene scene) {
         AppViewManager.registerDrawer(this);
         Swatch.BLUE.assignTo(scene);
+
+        ((Stage) scene.getWindow()).getIcons().add(new Image(Main.class.getResourceAsStream("/icon.png")));
     }
 
     public static void main(String[] args) {
