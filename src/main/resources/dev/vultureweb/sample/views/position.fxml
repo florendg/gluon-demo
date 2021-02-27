@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.TextField?>
+
+<View fx:id="position" prefHeight="600.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/15.0.1"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.vultureweb.sample.views.PositionPresenter">
+    <center>
+        <GridPane>
+
+            <Label text="Longitude" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="longitude"/>
+
+            <Label text="Latitude" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField prefHeight="26.0" prefWidth="122.0" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                       fx:id="latitude"/>
+
+            <Label text="Altitude" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField prefHeight="26.0" prefWidth="122.0" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                       fx:id="altitude"/>
+
+            <padding>
+                <Insets bottom="10.0" left="50.0" right="50.0" top="10.0"/>
+            </padding>
+            <columnConstraints>
+                <ColumnConstraints maxWidth="73.5" minWidth="63.5" prefWidth="73.5"/>
+                <ColumnConstraints maxWidth="150.0" minWidth="10.0" percentWidth="70.0" prefWidth="150.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            </rowConstraints>
+        </GridPane>
+    </center>
+</View>

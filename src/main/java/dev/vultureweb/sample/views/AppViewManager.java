@@ -5,7 +5,6 @@ import com.gluonhq.charm.glisten.afterburner.AppViewRegistry;
 import com.gluonhq.charm.glisten.afterburner.GluonPresenter;
 import com.gluonhq.charm.glisten.afterburner.Utils;
 import com.gluonhq.charm.glisten.application.MobileApplication;
-import com.gluonhq.charm.glisten.control.AppBar;
 import com.gluonhq.charm.glisten.control.Avatar;
 import com.gluonhq.charm.glisten.control.NavigationDrawer;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
@@ -16,7 +15,10 @@ import java.util.Locale;
 public class AppViewManager {
     public static final AppViewRegistry REGISTRY = new AppViewRegistry();
 
-    public static final AppView HOME_VIEW = view("Demo",HomePresenter.class,MaterialDesignIcon.HOME, AppView.Flag.SHOW_IN_DRAWER, AppView.Flag.SKIP_VIEW_STACK, AppView.Flag.HOME_VIEW);
+    public static final AppView HOME_VIEW = view("Demo",HomePresenter.class,MaterialDesignIcon.HOME,
+            AppView.Flag.SHOW_IN_DRAWER, AppView.Flag.SKIP_VIEW_STACK, AppView.Flag.HOME_VIEW);
+    public static final AppView POSITION_VIEW = view("Position",PositionPresenter.class,MaterialDesignIcon.LOCATION_ON,
+            AppView.Flag.SHOW_IN_DRAWER);
 
     private static AppView view(String title, Class<? extends GluonPresenter<?>> presenterClass, MaterialDesignIcon menuIcon, AppView.Flag... flags) {
         return REGISTRY.createView(name(presenterClass), title, presenterClass, menuIcon, flags);

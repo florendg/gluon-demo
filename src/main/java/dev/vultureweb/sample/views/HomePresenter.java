@@ -7,12 +7,20 @@ import com.gluonhq.charm.glisten.mvc.View;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
 import dev.vultureweb.sample.Main;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 
 public class HomePresenter extends GluonPresenter<Main> {
 
     @FXML
     private View home;
+
+    @FXML
+    private Button button;
+
+    @FXML
+    private Label positionLabel;
 
     public void initialize() {
         home.showingProperty().addListener((obs,ov,nv)->{
@@ -23,9 +31,6 @@ public class HomePresenter extends GluonPresenter<Main> {
             }
         });
 
-        final FloatingActionButton floatingActionButton = new FloatingActionButton(MaterialDesignIcon.ADD.text,
-                e->AppViewManager.HOME_VIEW.switchView());
-        floatingActionButton.showOn(home);
     }
 
     @FXML
