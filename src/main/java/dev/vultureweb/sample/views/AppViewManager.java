@@ -15,10 +15,10 @@ import java.util.Locale;
 public class AppViewManager {
     public static final AppViewRegistry REGISTRY = new AppViewRegistry();
 
-    public static final AppView HOME_VIEW = view("Demo",HomePresenter.class,MaterialDesignIcon.HOME,
-            AppView.Flag.SHOW_IN_DRAWER, AppView.Flag.SKIP_VIEW_STACK, AppView.Flag.HOME_VIEW);
-    public static final AppView POSITION_VIEW = view("Position",PositionPresenter.class,MaterialDesignIcon.LOCATION_ON,
+    public static final AppView POSITION_VIEW = view("Position", PositionPresenter.class, MaterialDesignIcon.LOCATION_ON,
             AppView.Flag.SHOW_IN_DRAWER);
+    public static final AppView CLOCK_VIEW = view("Clock", ClockPresenter.class, MaterialDesignIcon.TIMER,
+            AppView.Flag.SHOW_IN_DRAWER, AppView.Flag.SKIP_VIEW_STACK, AppView.Flag.HOME_VIEW);
 
     private static AppView view(String title, Class<? extends GluonPresenter<?>> presenterClass, MaterialDesignIcon menuIcon, AppView.Flag... flags) {
         return REGISTRY.createView(name(presenterClass), title, presenterClass, menuIcon, flags);
@@ -37,6 +37,6 @@ public class AppViewManager {
         NavigationDrawer.Header header = new NavigationDrawer.Header("Gluon Mobile",
                 "Demo App",
                 new Avatar(21, new Image(AppViewManager.class.getResourceAsStream("/icon.png"))));
-        Utils.buildDrawer(app.getDrawer(),header,REGISTRY.getViews());
+        Utils.buildDrawer(app.getDrawer(), header, REGISTRY.getViews());
     }
 }

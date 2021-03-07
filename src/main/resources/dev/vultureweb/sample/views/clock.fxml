@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Text?>
+
+<View fx:id="clock" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.vultureweb.sample.views.ClockPresenter">
+
+    <center>
+        <VBox alignment="TOP_CENTER">
+            <StackPane>
+                <Group>
+                    <children>
+                        <Arc fx:id="minuteHand" fill="coral" length="120.0" radiusX="100.0" radiusY="100.0"
+                             stroke="BLACK" strokeType="INSIDE" type="ROUND">
+                            <effect>
+                                <GaussianBlur/>
+                            </effect>
+                        </Arc>
+                        <Circle fill="WHITE" radius="90.0" stroke="WHITE"/>
+                        <Arc fx:id="hourHand" fill="aquamarine" length="75" radiusX="80" radiusY="80"
+                             stroke="cornflowerblue" strokeLineCap="BUTT" strokeMiterLimit="0.0" strokeType="INSIDE"
+                             strokeWidth="4" type="ROUND">
+                            <effect>
+                                <Glow>
+                                    <input>
+                                        <Bloom/>
+                                    </input>
+                                </Glow>
+                            </effect>
+                        </Arc>
+                        <Circle fill="white" radius="75" stroke="white"/>
+                        <Text fx:id="time" wrappingWidth="100" textAlignment="CENTER"/>
+                    </children>
+                </Group>
+            </StackPane>
+            <Text fx:id="date" wrappingWidth="200.0" textAlignment="CENTER"/>
+        </VBox>
+    </center>
+
+</View>

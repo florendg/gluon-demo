@@ -119,8 +119,8 @@
                         <list>dev.vultureweb.sample.Main</list>
                     </bundlesList>
                     <reflectionList>
-                        <list>dev.vultureweb.sample.views.HomePresenter</list>
                         <list>dev.vultureweb.sample.views.PositionPresenter</list>
+                        <list>dev.vultureweb.sample.views.ClockPresenter</list>
                     </reflectionList>
                 </configuration>
             </plugin>
